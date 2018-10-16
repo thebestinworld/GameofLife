@@ -13,11 +13,14 @@
                 method: 'PUT',
                 url: 'nextGeneration',
                 data: {
-                    board: $scope.board
+                    board: $scope.board,
+                    generation: $scope.generation
+
                 }
             }).then(function successCallback(response) {
                 $scope.board = response.data.board;
-                $scope.generation = response.data.generation;
+                $scope.generation = response.data.generation
+
 
             });
         };
@@ -30,10 +33,13 @@
                 url: 'randomBoard',
                 data: {
                     board: $scope.board
+
                 }
             }).then(function successCallback(response) {
                 $scope.board = response.data.board;
                 $scope.generation = response.data.generation;
+
+
 
             });
         };
@@ -54,7 +60,7 @@
             }
         };
 
-        $scope.generation = 0;
+
         $scope.height = 25;
         $scope.width = 30;
         $scope.newGame();

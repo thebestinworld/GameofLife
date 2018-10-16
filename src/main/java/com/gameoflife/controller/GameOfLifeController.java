@@ -14,11 +14,13 @@ public class GameOfLifeController {
 
 
 
+
     @PutMapping(value = "/nextGeneration", produces = APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity nextGeneration(@RequestBody BoardDTO boardDTO) {
         Board board = new Board(boardDTO.getBoard(),boardDTO.getGeneration()).doNext();
         boardDTO.setBoard(board.toBoolean());
+        boardDTO.setGeneration(board.getGeneration());
         return ResponseEntity.ok(boardDTO);
     }
 

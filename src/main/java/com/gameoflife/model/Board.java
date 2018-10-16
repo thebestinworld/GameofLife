@@ -42,7 +42,11 @@ public class Board {
         return booleanGrid;
     }
 
-	private Cell[][] initializeBoard(int height,int width ) {
+    public int getGeneration() {
+        return generation;
+    }
+
+    private Cell[][] initializeBoard(int height, int width ) {
 		Cell[][] board = new Cell[height][width];
 		for(int i = 0;i < height ; i++) {
 			for(int j = 0;j < width;j++) {

@@ -7,6 +7,8 @@ public class BoardDTO {
     private boolean[][] board;
     private int generation;
 
+
+
     public boolean[][] getBoard() {
         return board;
     }
@@ -22,4 +24,6 @@ public class BoardDTO {
     public void setGeneration(int generation) {
         this.generation = generation;
     }
+
+
 }
