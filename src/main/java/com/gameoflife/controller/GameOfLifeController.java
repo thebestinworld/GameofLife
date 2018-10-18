@@ -13,12 +13,10 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public class GameOfLifeController {
 
 
-
-
     @PutMapping(value = "/nextGeneration", produces = APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity nextGeneration(@RequestBody BoardDTO boardDTO) {
-        Board board = new Board(boardDTO.getBoard(),boardDTO.getGeneration()).doNext();
+        Board board = new Board(boardDTO.getBoard(), boardDTO.getGeneration()).doNext();
         boardDTO.setBoard(board.toBoolean());
         boardDTO.setGeneration(board.getGeneration());
         return ResponseEntity.ok(boardDTO);
@@ -27,11 +25,10 @@ public class GameOfLifeController {
     @PutMapping(value = "/randomBoard", produces = APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity randomBoard(@RequestBody BoardDTO boardDTO) {
-        Board board = new Board(25,30,0);
+        Board board = new Board(25, 30, 0);
         boardDTO.setBoard(board.toBoolean());
         return ResponseEntity.ok(boardDTO);
     }
-
 
 
 }

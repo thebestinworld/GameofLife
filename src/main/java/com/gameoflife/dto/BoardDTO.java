@@ -8,7 +8,6 @@ public class BoardDTO {
     private int generation;
 
 
-
     public boolean[][] getBoard() {
         return board;
     }
