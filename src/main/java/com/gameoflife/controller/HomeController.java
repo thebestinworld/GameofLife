@@ -11,4 +11,11 @@ public class HomeController {
     public String homepage(){
 	    return "gameOfLife";
     }
+
+    @RequestMapping(value="/history",method = RequestMethod.GET)
+    public String history(){
+	    return "history";
+    }
+
+
 }
