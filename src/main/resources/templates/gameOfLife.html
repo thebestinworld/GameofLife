@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="/css/style.css"/>
-    <link rel="stylesheet" href="/css/buttons.css"/>
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+          integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 </head>
 <body ng-app="myApp">
 <div class="container-fluid" ng-controller="AppController">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="/">Game of Life</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -21,19 +22,12 @@
             </ul>
         </div>
     </nav>
-
     <div class="line"><br></div>
     <div align="center">
-        Generation <div id="generation"   ng-bind="generation"></div>
+        Generation
+        <div id="generation" ng-bind="generation"></div>
     </div>
-
-
-
-
     <div class="line"><br></div>
-
-
-
     <table id="board">
         <tr ng-repeat="row in board">
             <td ng-repeat="cell in row track by $index" ng-click="toggle($parent.$index, $index)"
@@ -42,25 +36,19 @@
         </tr>
     </table>
     <div class="line"><br></div>
-<div align="center">
-
-    <a ng-click="newGame()" class="button4" style="background-color:#4ef18f">New Board</a>
-    <a ng-click="next()" class="button4" style="background-color:#9a4ef1">Next Generation</a>
-    <a  ng-click="random()" class="button4" style="background-color:#84f14e">Random Board</a>
-
-</div>
+    <div align="center" class="pure-button-group" role="group" aria-label="...">
+        <button ng-click="newGame()" class="pure-button pure-button-primary">New Board</button>
+        <button ng-click="next()" class="pure-button pure-button-primary">Next Generation</button>
+        <button ng-click="random()" class="pure-button pure-button-primary">Random Board</button>
+    </div>
     <div class="line"><br></div>
     <div align="center">
-        <div class="onoffswitch" >
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" ng-model="check" ng-change="autoplay(check)">
-        <label class="onoffswitch-label" for="myonoffswitch">
-            <span class="onoffswitch-inner"></span>
-            <span class="onoffswitch-switch"></span>
+        <label class="toggle">
+            <span class="toggle-label">AutoPlay</span>
+            <input class="toggle-checkbox" type="checkbox" ng-model="check" ng-change="autoplay(check)">
+            <div class="toggle-switch"></div>
         </label>
     </div>
-    </div>
-
-
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular-route.js"></script>
