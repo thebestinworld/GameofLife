@@ -102,9 +102,12 @@ public class Board {
         int count = 0;
 
         for (int i = row - 1; i <= row + 1; i++) {
+            //Check if the i index is actually in the board
             if (i >= 0 && i < this.board.length)
                 for (int j = col - 1; j <= col + 1; j++)
+                    //Check if the j index is actually in the board
                     if (j >= 0 && j < this.board[i].length)
+                        //Skip the cell that we counting its neighbours
                         if (i != row || j != col)
                             if (this.isAlive(i, j)) {
                                 count++;
